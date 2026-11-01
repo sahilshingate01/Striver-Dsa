@@ -14,13 +14,24 @@ Explanation: Smallest element strictly > 6 is 7 at index 3.
 
 
 def upper_bound(arr: list[int], target: int) -> int:
-    # TODO: Write your solution here
-    return 0
+    l = 0
+    h = len(arr) - 1
+    ans = len(arr)
+
+    while l <= h :
+        mid = (l + h) // 2
+        
+        if arr[mid] > target :
+            ans = mid 
+            h = mid - 1
+        else :
+            l = mid + 1
+    return ans
 
 
 # Set test_case = True to run test cases & edge cases
 # Set test_case = False to run normal execution with sample input
-test_case = False
+test_case = True
 
 if __name__ == "__main__":
     if test_case:
